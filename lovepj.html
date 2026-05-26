@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Do You Love Me? 💖</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        overflow: hidden;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #ffd6e7, #ffc1dc, #ffe3f1, #ffd1dc);
+        position: relative;
+        padding: 20px;
+      }
+
+      /* Floating hearts */
+      .floating-hearts span {
+        position: absolute;
+        bottom: -50px;
+        font-size: 22px;
+        color: rgba(255, 255, 255, 0.7);
+        animation: floatUp linear infinite;
+      }
+
+      .floating-hearts span:nth-child(1) {
+        left: 10%;
+        animation-duration: 9s;
+      }
+
+      .floating-hearts span:nth-child(2) {
+        left: 20%;
+        animation-duration: 11s;
+      }
+
+      .floating-hearts span:nth-child(3) {
+        left: 35%;
+        animation-duration: 8s;
+      }
+
+      .floating-hearts span:nth-child(4) {
+        left: 50%;
+        animation-duration: 14s;
+      }
+
+      .floating-hearts span:nth-child(5) {
+        left: 65%;
+        animation-duration: 10s;
+      }
+
+      .floating-hearts span:nth-child(6) {
+        left: 80%;
+        animation-duration: 13s;
+      }
+
+      .floating-hearts span:nth-child(7) {
+        left: 90%;
+        animation-duration: 9s;
+      }
+
+      @keyframes floatUp {
+        0% {
+          transform: translateY(0) scale(1);
+          opacity: 0;
+        }
+
+        20% {
+          opacity: 1;
+        }
+
+        100% {
+          transform: translateY(-120vh) scale(1.6);
+          opacity: 0;
+        }
+      }
+
+      .container {
+        position: relative;
+        width: 90%;
+        max-width: 500px;
+        padding: 40px 25px;
+        border-radius: 35px;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(14px);
+        border: 2px solid rgba(255, 255, 255, 0.4);
+        box-shadow: 0 10px 40px rgba(255, 105, 180, 0.3);
+        z-index: 2;
+      }
+
+      .stickers {
+        font-size: 2rem;
+        margin-bottom: 15px;
+      }
+
+      h1 {
+        color: #ff2e86;
+        font-size: 2.8rem;
+        margin-bottom: 15px;
+        text-shadow: 0 2px 10px rgba(255, 105, 180, 0.4);
+      }
+
+      .cute-text {
+        font-size: 1.1rem;
+        color: #c2185b;
+        margin-bottom: 20px;
+      }
+
+      .main-heart {
+        font-size: 6rem;
+        margin-bottom: 20px;
+        display: inline-block;
+        animation: heartbeat 1.2s infinite;
+        filter: drop-shadow(0 0 12px pink);
+      }
+
+      @keyframes heartbeat {
+        0% {
+          transform: scale(1);
+        }
+
+        25% {
+          transform: scale(1.15);
+        }
+
+        50% {
+          transform: scale(1);
+        }
+
+        75% {
+          transform: scale(1.12);
+        }
+
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      .buttons {
+        position: relative;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .btn {
+        padding: 14px 38px;
+        border: none;
+        border-radius: 50px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.2s linear;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      #yesBtn {
+        background: linear-gradient(to right, #ff4f9a, #ff7eb3);
+        color: white;
+      }
+
+      #yesBtn:hover {
+        transform: scale(1.08);
+        box-shadow: 0 0 20px rgba(255, 20, 147, 0.5);
+      }
+
+      #noBtn {
+        background: #90a4ae;
+        color: white;
+        position: absolute;
+        left: calc(50% + 20px);
+      }
+
+      .hidden {
+        display: none !important;
+      }
+
+      .success-message {
+        color: #ff2e86;
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        animation: pop 0.5s ease;
+      }
+
+      .celebration {
+        font-size: 5rem;
+        animation: bounce 1s infinite alternate;
+      }
+
+      .love-note {
+        margin-top: 15px;
+        font-size: 1.2rem;
+        color: #ad1457;
+      }
+
+      @keyframes pop {
+        from {
+          opacity: 0;
+          transform: scale(0.5);
+        }
+
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      @keyframes bounce {
+        from {
+          transform: translateY(0);
+        }
+
+        to {
+          transform: translateY(-10px);
+        }
+      }
+
+      /* Mobile Responsive */
+      @media (max-width: 768px) {
+        body {
+          padding: 15px;
+        }
+
+        .container {
+          width: 100%;
+          padding: 30px 20px;
+          border-radius: 25px;
+        }
+
+        h1 {
+          font-size: 2rem;
+        }
+
+        .cute-text {
+          font-size: 1rem;
+        }
+
+        .main-heart {
+          font-size: 4.5rem;
+        }
+
+        .stickers {
+          font-size: 1.7rem;
+        }
+
+        .buttons {
+          flex-direction: column;
+          height: auto;
+          gap: 15px;
+          margin-top: 20px;
+        }
+
+        .btn {
+          width: 100%;
+          max-width: 240px;
+          font-size: 1rem;
+          padding: 13px 18px;
+        }
+
+        #noBtn {
+          position: relative;
+          left: auto;
+          top: auto;
+          transform: none !important;
+        }
+
+        .success-message {
+          font-size: 2rem;
+        }
+
+        .celebration {
+          font-size: 4rem;
+        }
+
+        .love-note {
+          font-size: 1rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        h1 {
+          font-size: 1.7rem;
+        }
+
+        .main-heart {
+          font-size: 4rem;
+        }
+
+        .success-message {
+          font-size: 1.6rem;
+        }
+
+        .celebration {
+          font-size: 3rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Floating Hearts -->
+    <div class="floating-hearts">
+      <span>💖</span>
+      <span>💕</span>
+      <span>💘</span>
+      <span>💗</span>
+      <span>💞</span>
+      <span>🌸</span>
+      <span>✨</span>
+    </div>
+
+    <div class="container">
+      <!-- Main Screen -->
+      <div id="quiz-screen">
+        <div class="stickers">👩🏻‍❤️‍💋‍👨🏻 💕 🧸 ✨</div>
+
+        <h1>Do You Love Me? ❤️</h1>
+
+        <p class="cute-text">Be honest... my heart depends on it 🥺💌</p>
+
+        <div class="main-heart">💖</div>
+
+        <div class="buttons">
+          <button class="btn" id="yesBtn">Yes 💞</button>
+
+          <button class="btn" id="noBtn">No 🥺</button>
+        </div>
+      </div>
+
+      <!-- Success Screen -->
+      <div id="success-screen" class="hidden">
+        <h1 class="success-message">Yayyyy 💖 I knew it!!</h1>
+
+        <div class="celebration">🥰💞🎉✨</div>
+
+        <p class="love-note">Let's fix this together! 💕</p>
+      </div>
+    </div>
+
+    <script>
+      const noBtn = document.getElementById("noBtn");
+      const yesBtn = document.getElementById("yesBtn");
+      const quizScreen = document.getElementById("quiz-screen");
+      const successScreen = document.getElementById("success-screen");
+
+      // Count how many times button escaped
+      let escapeCount = 0;
+
+      // Maximum escape times
+      const maxEscapes = 8;
+
+      function moveButton() {
+        // Disable running on mobile
+        if (window.innerWidth <= 768) return;
+
+        // Stop moving after max escapes
+        if (escapeCount >= maxEscapes) {
+          noBtn.style.position = "relative";
+          noBtn.style.left = "0";
+          noBtn.style.top = "0";
+          noBtn.style.transform = "none";
+          return;
+        }
+
+        escapeCount++;
+
+        const btnWidth = noBtn.offsetWidth;
+        const btnHeight = noBtn.offsetHeight;
+
+        const maxX = window.innerWidth - btnWidth;
+
+        const maxY = window.innerHeight - btnHeight;
+
+        const randomX = Math.random() * maxX;
+
+        const randomY = Math.random() * maxY;
+
+        // Super fast movement
+        noBtn.style.transition = "all 0.08s linear";
+
+        noBtn.style.position = "fixed";
+        noBtn.style.left = `${randomX}px`;
+        noBtn.style.top = `${randomY}px`;
+
+        // Random funny rotation
+        const rotate = Math.floor(Math.random() * 360);
+
+        noBtn.style.transform = `rotate(${rotate}deg)`;
+
+        // Change text while escaping
+        const texts = [
+          "No 😭",
+          "Catch Me 😝",
+          "Nope 😂",
+          "Too Slow 🏃",
+          "Never 😜",
+          "Try Again 🤭",
+          "Almost 😆",
+          "Hehe 💨",
+        ];
+
+        noBtn.innerText = texts[Math.floor(Math.random() * texts.length)];
+
+        // Final text after stopping
+        if (escapeCount === maxEscapes) {
+          setTimeout(() => {
+            noBtn.innerText = "Okay Fine 😳";
+          }, 300);
+        }
+      }
+
+      // Escape when cursor touches button
+      noBtn.addEventListener("mouseenter", moveButton);
+
+      // Escape when cursor gets close
+      document.addEventListener("mousemove", (e) => {
+        if (window.innerWidth <= 400 || escapeCount >= maxEscapes) return;
+
+        const rect = noBtn.getBoundingClientRect();
+
+        const distanceX = Math.abs(e.clientX - rect.left);
+
+        const distanceY = Math.abs(e.clientY - rect.top);
+
+        if (distanceX < 50 && distanceY < 50) {
+          moveButton();
+        }
+      });
+
+      // Success screen
+      yesBtn.addEventListener("click", () => {
+        quizScreen.classList.add("hidden");
+        successScreen.classList.remove("hidden");
+      });
+    </script>
+  </body>
+</html>
