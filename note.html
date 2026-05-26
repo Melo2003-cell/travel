@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="w-full min-h-screen bg-pink-500">
+    <aside class="w-1/4 border-2 h-screen bg-gray-300 p-5 flex flex-col">
+      <!-- top section -->
+      <div class="flex gap-3">
+        <img
+          src="img/leaflogo.png"
+          alt=""
+          class="w-10 rounded-2xl bg-green-600 shadow-sm p-2"
+        />
+
+        <div>
+          <h1 class="text-green-700 text-2xl">QuietMind</h1>
+          <p class="text-gray-600">Beginner's Heaven</p>
+        </div>
+      </div>
+
+      <!-- sec section -->
+      <div class="flex flex-col gap-2 py-12">
+        <button
+          class="border-2 border-gray-200 rounded-xl shadow-md p-4 bg-green-900 w-full text-white"
+        >
+          ➕<span class="text-white font-bold pl-3">New Note</span>
+        </button>
+        <p class="text-gray-500">LIBRARY</p>
+        <div class="flex items-center gap-3 bg-green-400 p-2">
+          <img src="img/document.png" alt="Notes" class="w-10" />
+          <a href="#" class="text-gray-400"> Notes</a>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <img src="img/folder.png" alt="Categories" class="w-10" />
+          <a href="#" class="text-gray-400">Categories</a>
+        </div>
+      </div>
+
+      <!-- third section -->
+      <div class="flex flex-col gap-3 flex-1">
+        <p class="text-gray-500">FAVOURITES</p>
+        <!-- <ul class="list-inside list-disc marker:text-green-500">
+          <li>Personal</li>
+          <li>Creative Work</li>
+        </ul> -->
+        <div class="flex items-center gap-2">
+          <span class="h-2 w-2 rounded-full bg-green-950"></span>
+          <span class="text-gray-600">Personal</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="h-2 w-2 rounded-full bg-green-500"></span>
+          <span class="text-gray-600">Creative Work</span>
+        </div>
+      </div>
+
+      <!-- fourth section -->
+      <div class="flex items-center gap-4 border-t">
+        <img src="img/setting.png" alt="Settings" class="w-10" />
+        <a href="" class="text-gray-600">Settings</a>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <img src="img/archive.png" alt="archive" class="w-10" />
+        <a href="" class="text-gray-600">Archive</a>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <img src="img/help.png" alt="help" class="w-10" />
+        <a href="" class="text-gray-600">Help</a>
+      </div>
+    </aside>
+  </body>
+</html>
